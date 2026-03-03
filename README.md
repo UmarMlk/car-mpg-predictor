@@ -3,8 +3,7 @@
 A Machine Learning web application that predicts a car's fuel efficiency (**Miles Per Gallon - MPG**) based on its specifications. This project uses a **Linear Regression** model trained on the classic Auto MPG dataset.
 
 ## 🚀 Live Demo
-[Paste your Streamlit deployment link here]
-
+https://car-mpg-predictor-01.streamlit.app/
 ## 📊 Project Overview
 The goal of this project is to estimate the mileage of a vehicle by analyzing features like:
 - Cylinders
