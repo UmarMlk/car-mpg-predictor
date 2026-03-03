@@ -4,7 +4,7 @@ import numpy as np
 import pandas as pd
 
 # 1. Model Load Karein
-# Ensure karein ke aapki pkl file ka naam wahi ho jo aapne step 1 mein rakha tha
+
 try:
     with open('car_model.pkl', 'rb') as file:
         model = pickle.load(file)
@@ -33,15 +33,12 @@ with col2:
     origin = st.radio('Origin', ['America', 'Europe', 'Asia'])
 
 # 3. Preprocessing (Categorical Data)
-# Note: Agar aapke model ne One-Hot Encoding use ki thi to ye part change hoga.
-# Filhal hum simple numerical mapping use kar rahe hain: America=1, Europe=2, Asia=3
+
 origin_mapping = {'America': 1, 'Europe': 2, 'Asia': 3}
 origin_val = origin_mapping[origin]
 
 # 4. Prediction Button
-# 3. Preprocessing (One-Hot Encoding handling)
-# Model 9 features expect kar raha hai:
-# [cylinders, displacement, horsepower, weight, acceleration, model_year, origin_america, origin_europe, origin_asia]
+
 
 origin_america = 0
 origin_europe = 0
@@ -55,9 +52,7 @@ else:
     origin_asia = 1
 
 # 4. Prediction Button
-# 3. Preprocessing (One-Hot Encoding handling)
-# Model 9 features expect kar raha hai:
-# [cylinders, displacement, horsepower, weight, acceleration, model_year, origin_america, origin_europe, origin_asia]
+
 
 origin_america = 0
 origin_europe = 0
@@ -72,7 +67,7 @@ else:
 
 # 4. Prediction Button
 if st.button('Predict Mileage'):
-    # Ab hum 9 features bhej rahe hain model ko
+ 
     input_data = np.array([[
         cylinders, 
         displacement, 
@@ -89,4 +84,5 @@ if st.button('Predict Mileage'):
         prediction = model.predict(input_data)
         st.success(f"### Predicted Mileage: **{round(prediction[0], 2)} MPG**")
     except Exception as e:
+
         st.error(f"Error: {e}")
